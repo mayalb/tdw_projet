@@ -1,0 +1,281 @@
+ .top-container {
+	 
+ 	 padding: 5%;
+     
+}
+.row-a {
+	
+	height:10%;
+	width: 100%;
+	 
+}
+.row-b {
+	
+	height:10%;
+	width: 100%;
+     
+}
+
+.row-c{
+  height:20%;
+  
+   
+}
+
+.row-d{
+     
+	height:80%;
+	width: 100%;
+	  
+    
+}
+.sous-row-d{
+	padding-top: 4px;
+}
+
+.row-e{
+    margin-top: 5px;
+
+     
+}
+ 
+.logo {
+	
+	width: 5%;
+	height: 100%;
+}
+.res-soc-link{
+    padding-left:900px;
+}
+.res-soc-link1{
+	margin-left: 10px;
+}
+.nav.navbar-nav
+{
+	height: 100%;
+	font-size: 25px;
+	 
+}
+.navbar-nav{
+		font-size: 25px;
+		padding-bottom: 0px;
+}
+
+.nav-item {
+	padding-left: 70px;
+	 
+}
+.nav-link{
+	font-size: 23px;
+}
+.ml{
+	padding-top: 5px;
+}
+
+  body.a{
+	  background-image:  url("../images/blue.jpg");;
+  }
+  div.cadre {
+	display: inline-block;
+	height: 320px;
+	width: 380px;
+	background: #147DB5;
+	color: white;
+	padding: 7px;
+	margin: 5px;
+  }
+  /* div.cadre p {
+	text-align: center;
+  } */
+
+  div.cadre img {
+	border-radius: 10px;
+	height: 250px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  form.inline {
+	display:inline;
+	margin: 5px;
+	padding: 10px;
+
+
+  }
+  .center{
+	text-align: center;
+
+  }
+  input.button2 {
+	  border-radius: 2px;
+	  background-color:#444549 ;
+	  color:#E5E5E5;
+	}
+	.select{
+		width:180px;
+		height: 35px;
+	}
+	.custom-file-upload {
+		border: 1px solid #ccc;
+		display: inline-block;
+		padding: 6px 12px;
+		cursor: pointer;
+	}
+
+	.label-file {
+		cursor: pointer;
+		color: #00b1ca;
+		font-weight: bold;
+	}
+	.label-file:hover {
+		color: #25a5c4;
+	}
+	.from-st{
+		border-radius: 5px;
+		background-color: #F0F0F0;
+		padding: 20px;
+		text-align: center;
+		width:450px;
+		margin-left:140 px;
+	}
+	.from-st-long{
+		border-radius: 5px;
+		background-color: #F0F0F0;
+		padding: 20px;
+		text-align: center;
+		width:450px;
+		margin-left:140 px;
+		height: 300px;
+
+	}
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.deco{
+	padding: 12px 20px;
+	width:20px;
+}
+input[type=submit]:hover {
+  background-color: #00b1ca;
+}
+	
+    th {
+        
+		border: 1px dotted #000000;
+			width: 50%;
+			border-width: 10%;
+		   
+			
+		   
+		}
+	.input-file {
+		display: none;
+	}
+	.avatar {
+		border-radius: 10px;
+	
+		height: 50px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  .table{
+		  width:200px;
+	  }
+	  #customers {
+		font-family: Arial, Helvetica, sans-serif;
+		border-collapse: collapse;
+		width: 50%;
+	  }
+	  
+	  #customers td, #customers th {
+		border: 1px solid #ddd;
+		padding: 8px;
+	  }
+	  
+	  #customers tr:nth-child(even){background-color: #f2f2f2;}
+	  
+	  #customers tr:hover {background-color: #ddd;}
+	  
+	  #customers th {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		text-align: left;
+		background-color: black;
+		color: #F0F0F0;
+	  }
+	  a.buy {
+		color: black;
+		font-size:medium;
+		text-decoration: none;
+		float: right;
+		margin-left: 40px;
+	}
+	a.buy:hover
+	{
+		color: #f90;
+		text-decoration: underline;         
+	}
+	
+	
+  /* .articles-site{
+	padding:20px; 
+	
+}
+.article-site{
+	 margin-top: 50px;
+	 border-radius: 10px;
+	 box-shadow: 0px 0px 3px 0px #000;
+	 display: inline-block;
+
+}
+
+.form-container {
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 2px 0px #000;
+	display: inline-block;
+}
+.titre-article{
+	padding: 10px;
+}
+.texte-article{
+	font-size: 15px;
+padding-top:  10px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.texte-article1{
+padding-top:  10px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.texte-article2{
+padding-top:  10px;
+padding-left: 10px;
+padding-right: 10px;
+}
+.texte-article3{
+padding-top:  10px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+ */

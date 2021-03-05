@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <link href="../css/sheet.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
+
+        <title>Ecole de formation TDW</title> 
+        
+    </head>
+    <body >
+    
+       
+      <div class="container-fluid top-container">
+      <div class="row-a">
+         <img src="../images/logo.png" class="logo" style="height: 50px;width: 120px;">
+         
+           <a class="res-soc-link"  href="https://www.youtube.com" style="padding-left:900px;" ><img src="../images/q5.png" ></a>  
+           <a class="res-soc-link1"  href="https://www.facebook.com"><img src="../images/q7.png"></a>
+           <a class="res-soc-link1"  href="https://www.instagram.com"><img src="../images/q4.png"></a>
+           <a class="res-soc-link1"  href="https://www.google.com"><img src="../images/q6.png"></a>
+           <a class="res-soc-link1"  href="https://www.LinkedIn.com"><img src="../images/q1.png"></a>
+           <a class="res-soc-link"  href="connexion-view.php"> Connexion</a>  
+      </div>
+      <nav>
+      
+          <ul class="menu" id="menu">
+            <li ><a href="#">Acceuil</a> </li>
+          <li ><a href="#"></a>Présentation </a></li>
+              
+          <li ><a href="cycleprim-view.php"></a>Cycle primaire</a></li>
+          <li ><a href="#"></a>Cycle moyen</a></li>
+          <li ><a href="#"></a>Cycle secondaire</a></li>
+          <li ><a href="#">Espace élève</a></li> 
+          <li ><a href="#">Espace Parent</a></li> 
+          <li ><a href="#">Contact</a></li> 
+         </ul>
+     
+        </nav>
+     
+     
+        <form action="./controller/inscription.php" method="POST"> 
+              <div class="form-group  ">
+                <label for="name">Nom </label>
+                <input type="text"   id="name" class="form-control" name="nom">
+              </div> 
+              <div class="form-group">
+                <label for="name">Prénom </label>
+                <input type="text"   id="name" class="form-control" name="prenom">
+              </div> 
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email"   id="email" class="form-control" name="email">
+              </div>   
+              <div class="form-group">
+                <label for="password">Mot de passe </label>
+                <input type="password"   id="password" class="form-control" name="mdp1">
+              </div>
+              <div class="form-group">
+                <label for="password">confirmation du mot de passe </label>
+                <input type="password"   id="password2" class="form-control" name="mdp2">
+              </div> 
+              <div class="form-group">
+                <label for="address">Adresse </label>
+                <input type="address"   id="address" class="form-control" name="adresse">
+              </div>  
+              <div class="form-group">
+                <label for="address">Commune </label>
+                <input type="address"   id="commune" class="form-control" name="commune">
+              </div>  
+              <div class="form-group">
+                <label for="address">Wilaya </label>
+                <input type="address"   id="wilaya" class="form-control" name="wilaya" >
+              </div>  
+              <div class="form-group">
+                <label for="address">numéro de télephone </label>
+                <input type="address"   id="address" class="form-control" name="num">
+              </div>   
+              <div class="form-group">
+                <label for="address">Faxe</label>
+                <input type="address"   id="faxe" class="form-control" name="faxe">
+              </div>   
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+               <input type="submit" name="submit" value="S'inscrire" class="btn btn-primary">
+            </form>
+    </body>
+    
+ 
+          
+           
+</html>

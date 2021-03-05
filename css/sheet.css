@@ -1,0 +1,144 @@
+h1{
+    font-size:50px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: fantasy;
+}
+table {
+   
+    width: 50%;
+    }
+
+ th {
+        
+    border: 1px dotted #000000;
+        width: 50%;
+        border-width: 10%;
+       
+ 
+       
+        }
+td {
+           
+    border: 1px dotted #000000; 
+            width: 50%;
+                      
+}
+tr:nth-child(2n){
+    background-color: #2D89CB;
+}
+tr:nth-child(2n+1){
+    background-color:#37373D;
+}
+
+nav
+{
+    background-color: #37373D;  
+    color: white;
+    line-height: 48px;
+    font-size: 18px;
+    margin-bottom: 30px;
+
+   margin: auto;
+
+    
+  
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+
+
+ul.menu > li
+{
+    display: inline-block;
+
+    width: 140px;
+    
+}
+
+
+
+ul.menu li:hover .dropdown:hover .dropbtn
+{
+    background-color:#2D89CB;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+   
+
+ul.menu a
+{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+.slide{
+    margin: 5px;
+}
+
+.show{
+
+     
+     animation: slider 30s infinite;
+  }
+.show:hover{
+
+    animation-play-state: paused;
+ }
+ div.slider{
+    overflow: hidden;
+  
+     background-color: black;
+   width: 70%;
+   height: 555px;
+   margin-bottom: 10px;
+    
+   }
+  @keyframes slider{
+      0%{transform: translateY(0);}
+      30%{transform: translateY(-1600px);}
+      60%{transform: translateY(-3267px);}
+      80%{transform: translateY(-4867px);}
+      100%{transform: translateY(-0);}
+  }
