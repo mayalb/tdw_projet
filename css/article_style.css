@@ -1,0 +1,125 @@
+       .card {
+  width: 400px; /*1*/
+  margin: 0px auto; /*2*/
+  background-color: white; /*3*/
+  box-shadow: 0px 5px 20px #999; /*4*/
+  margin-left: 90px;
+  margin-top: 30px;
+  font-family: Arial !important;
+}
+div.cadre-article{
+	display: inline-block;
+	height: 420px;
+	width: 380px;
+	background: #D2D2D2;
+	color: black;
+	padding: 7px;
+	margin: 5px;
+  }
+  div.cadre-article img{
+	border-radius: 5px;
+	height: 320px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+  }
+.card a { /*5*/
+  color: #333; 
+  text-decoration: none;
+}
+.card:hover .card-image img { /*6*/
+  width: 160%;
+  filter: grayscale(0);
+}
+/*******************************************/
+.card-image {
+  height: 400px;/*1*/
+  position: relative;/*2*/
+  overflow: hidden;/*3*/
+}
+.card-image img {
+  width: 150%;/*4*/
+    /*5 - Méthode de centrage en fonction de la taille de l'image */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(0.5);/*6*/
+    /*7 - Transition */
+  transition-property: filter width; 
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+/*******************************************/
+.card-body {
+    text-align:center;  /*1*/
+  padding: 15px 20px; /*2*/
+  box-sizing: border-box; /*3*/
+}
+/*******************************************/
+
+
+.card-title, .card-excerpt {
+     font-family: Arial , Helvetica, sans-serif;
+
+}
+
+.card-title {
+  text-align:center;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+.card-excerpt {
+  color: #777;
+}
+
+.articles{
+  display: inline-block;
+  
+}
+div .card { float:left; }
+
+.titre_art{
+ color: #00121b;text-align: center; font-family: Arial !important;
+}
+
+/******************TABLE D'ARTICLES**************************/
+table {
+border: medium solid #ff9800;
+font-family: Arial !important;
+border-collapse: collapse;
+width: 50%;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+}
+th {
+font-family: Arial !important;
+border: thin solid #ff9800;
+width: 50%;
+padding: 5px;
+background-color: #f5f6f6;
+
+}
+td {
+border: thin solid #ff9800;
+width: 50%;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+font-family: Arial !important;
+}
+
+
+/***********************STYLE*********************/
+.border2 {
+    text-align: center;
+  display: inline-block;
+  height: 3px;
+  width: 200px;
+  background: #ff9800;
+  color: #ff9800;
+  background-color: #ff9800;
+  border: 0px;
+}

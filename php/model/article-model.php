@@ -101,6 +101,15 @@ class article
              
       header ('location:..\article-view.php');
     }
+   
+     public function getarticle_byid($id){
+      $co=new database();
+      $conn=$co->connecttodb();
+      $query="SELECT * FROM article where id = '$id' ";
+      $resultat= $co->selecttable($query);
+   
+      return $resultat;
+     }
 }
     
 

@@ -44,120 +44,14 @@ if (isset($_SESSION['mail'])){
       
    
         <?php 
-          function TD_counter($day,$seance,$nom){
-             $data ="<tr><td>".$seance."</td>";
-             for($i=0;$i<7;$i++){
-               if($i==days($day)):
-                $data.="<td>".$nom."</td>";
-               else:
-                $data.="<td></td>";
-               endif;
-             }
-             return $data;
-          }
-      
-          function print_table($day_ens,$seance="",$nom=""){
-
-            switch ($day_ens){
-              case 'samedi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'dimanche':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'lundi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'mardi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'mercredi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'jeudi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-              case 'vendredi':
-                echo TD_counter($day_ens,$seance,$nom);
-              break;
-
-           }
-            
-          }
-
-           function days($day_ens){
-            switch ($day_ens){
-             case 'samedi':
-               return 0;
-             break;
-             case 'dimanche':
-               return 1;
-             break;
-             case 'lundi':
-              return 2;
-             break;
-             case 'mardi':
-              return 3;
-             break;
-             case 'mercredi':
-             return 4;
-             break;
-             case 'jeudi': 
-              return 5;
-             break;
-             case 'vendredi':
-              return 6;
-             break;    
-
-             } }
-            function days_in($day_ens){
-             switch ($day_ens){
-               case 0:
-                 return 'samedi';
-               break;
-               case 1:
-                 return 'dimanche';
-               break;
-               case 2:
-                return 'lundi';
-               break;
-               case 3:
-                return 'mardi';
-               break;
-               case 4:
-               return 'mercredi';
-               break;
-               case 5: 
-                return 'jeudi';
-               break;
-               case 6:
-                return 'vendredi';
-               break;    
-
-             } }
-           function print_all($id,$day){//$enseignant['id_ens']  'samedi'
-              $classC = new gestionseance();
-              $seances = $classC->get_seance_by_ens_id_day($id,$day);
-               $data_ens = array(
-                  'nom'=>'',
-                  'day'=>'',
-                  'seance'=>''
-                );
-               foreach ($seances as $seance): 
-                 $clas = new classcont();
-                 $classe= $clas-> get_classe($seance['id_classe']);
-                 $nom=$classe[0]['nom'];
-                 $data_ens['nom']=$nom;
-                 $data_ens['day'] = $seance['jour'];
-                 $data_ens['seance'] = $seance['heure_debut']."_".$seance['heure_fin'];
-               endforeach;
-               
-               return $data_ens;
-          }
+        $print = new gestionseance();
+        
+          
 
 
     $ens = new enseignant_cont();
     $enseignants= $ens->recup_enseignants("afficher"); 
+    
     foreach (   $enseignants as    $enseignant): 
   ?>
        
@@ -200,34 +94,38 @@ if (isset($_SESSION['mail'])){
      $data = array();
       $counter=0;
       foreach ($days as $day => $num){
-          $fetch=print_all($enseignant['id_ens'],$day);
+          $fetch=$print->print_all($enseignant['id_ens'],$day);
           if($fetch['day']!=''):
             $data[]=$fetch;
             $counter = $counter + 1;
           endif;
-      }            
-      $seances = array('seance'=>array(),'index'=>array(),'days'=>array());
-      $previous = $data[0]['seance'];
-      for($i=1;$i<$counter;$i++):
-        if($data[$i]['seance']==$previous):
-          $seances['seance'][] = $data[$i]['seance'];
-          $seances['days'][] = $data[$i]['day'];
-          $seances['index'][] = $i;
-          $ip = $i - 1;
-          $seances['seance'][] = $previous;
-          $seances['days'][] = $data[$ip]['day'];
-          $seances['index'][] = $ip;
-        else:
-          $previous=$data[$i]['seance'];
-        endif;
-      endfor;  
-
+      }  
+      if(!empty($data)) :         
+        $seances = array('seance'=>array(),'index'=>array(),'days'=>array());
+        $previous = $data[0]['seance'];
+        for($i=1;$i<$counter;$i++):
+          if($data[$i]['seance']==$previous):
+            $seances['seance'][] = $data[$i]['seance'];
+            $seances['days'][] = $data[$i]['day'];
+            $seances['index'][] = $i;
+            $ip = $i - 1;
+            $seances['seance'][] = $previous;
+            $seances['days'][] = $data[$ip]['day'];
+            $seances['index'][] = $ip;
+          else:
+            $previous=$data[$i]['seance'];
+          endif;
+        endfor;  
+       endif;
 if(empty($seances['seance'])):
     echo '<br><br>Enseignant : '.$enseignant['nom']."<br>";
      $data = array();
      $counter = 0;
      foreach ($days as $day => $num){
-          $fetch=print_all($enseignant['id_ens'],$day);
+          $fetch=$print->print_all($enseignant['id_ens'],$day);
+          $day_ens = "";
+          $seance = "";
+          $nom = "";
           if($fetch['day']!=''):
             $data[]=$fetch;
             $day_ens = $data[$counter]['day'];
@@ -235,13 +133,16 @@ if(empty($seances['seance'])):
             $nom = $data[$counter]['nom'];
             $counter = $counter + 1;
             endif;
-            print_table($day_ens,$seance,$nom);
+
+            $print->print_table($day_ens,$seance,$nom);
      }
+
 else:
+
     $days_ens = array();
     $days= array();
     for($i=0;$i<count($seances['days']);$i++):
-      $days[]=days($seances['days'][$i]);
+      $days[]=$print->days($seances['days'][$i]);
     endfor;
     sort($days);
     $j=0;
@@ -258,7 +159,7 @@ else:
       sort($days);
       for($i=0;$i<7;$i++):
         if((string)$i==$days[$i]):
-          echo "<td>".print_all($enseignant['id_ens'],days_in($i))['nom']."</td>";   
+          echo "<td>".$print->print_all($enseignant['id_ens'],$print->days_in($i))['nom']."</td>";   
         else:
           echo '<td></td>';
         endif;
@@ -279,7 +180,7 @@ else:
         $day_ens = $value['day'];
         $nom = $value['nom'];
         $seance = $value['seance'];
-        print_table($day_ens,$seance,$nom);
+        $print->print_table($day_ens,$seance,$nom);
       }
       
   

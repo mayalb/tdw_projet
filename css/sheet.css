@@ -137,8 +137,8 @@ ul.menu a
    }
   @keyframes slider{
       0%{transform: translateY(0);}
-      30%{transform: translateY(-1600px);}
-      60%{transform: translateY(-3267px);}
-      80%{transform: translateY(-4867px);}
+      33%{transform: translateY(-1600px);}
+      77%{transform: translateY(-3267px);}
+     
       100%{transform: translateY(-0);}
   }

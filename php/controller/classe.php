@@ -15,6 +15,24 @@ class classcont{
         return $resultat;
 
     }
+    public function get_classe_primaire(){
+        $req = new classe();
+        $resultat = $req->get_classe_primaire();   
+        return $resultat;
+
+    }
+    public function get_classe_moyen(){
+        $req = new classe();
+        $resultat = $req->get_classe_moyen();   
+        return $resultat;
+
+    }
+    public function get_classe_secondaire(){
+        $req = new classe();
+        $resultat = $req->get_classe_secondaire();   
+        return $resultat;
+
+    }
       
    
 }

@@ -50,7 +50,7 @@ if (isset($_SESSION['mail'])){
                      $ens = $classC->recup_enseignants("afficher");
                       foreach ($ens as $en): 
                     ?>
-              <option value="<?php echo $en['id'] ?>"> <?= $en['nom'] ?></option>
+              <option value="<?php echo $en['id_ens'] ?>"> <?= $en['nom'] ?></option>
                      <?php endforeach; ?>
                  </select>
 
@@ -71,9 +71,9 @@ if (isset($_SESSION['mail'])){
                  </select>
 
            
-               <input type="submit" name="submit" value="Confirmer" >
+               <input type="submit" name="submitens" value="Confirmer" >
             </form></div>
-
+             
             <h1>Ajouter des heures de travail et de reception à un enseignant </h1>
         <div class="from-st">
              
@@ -88,7 +88,7 @@ if (isset($_SESSION['mail'])){
                      $ens = $classC->recup_enseignants("afficher");
                       foreach ($ens as $en): 
                     ?>
-              <option value="<?php echo $en['id'] ?>"> <?= $en['nom'] ?></option>
+              <option value="<?php echo $en['id_ens'] ?>"> <?= $en['nom'] ?></option>
                      <?php endforeach; ?>
                  </select>
 
@@ -115,25 +115,29 @@ if (isset($_SESSION['mail'])){
                 
 
            
-               <input type="submit" name="submit" value="Confirmer" >
+               <input type="submit" name="submithh" value="Confirmer" >
             </form></div>
       
          
         <br><br><br><br><br>
            
             <?php 
+                     $name = "";
+
                      $classC = new enseignant_cont();
                      $ens = $classC->recup_enseignants("afficher");
                       foreach ($ens as $en): 
+                        $name = $en['nom'];
+                        endforeach; 
                     ?>
          
-        <br><br><br><br><br>
+        
         <table id="customers" class="customers" style="position:center;">
                 <thead style="color:black;">
                     <tr>
-                    <th scope="col" style="background-color:none;" ></th>
+                    <th scope="col" rowspan="3"> enseignant </th>
                     <th scope="col" rowspan="3"> Heure de travail </th>
-                    <th scope="col">Heure de travail </th>
+                    <th scope="col">Heure de reception </th>
                     <th scope="col">Jour</th>
                     <th scope="col">Supprimer</th>
                     </tr>               
@@ -141,24 +145,71 @@ if (isset($_SESSION['mail'])){
                 <tbody >
                 <?php 
                      $classC = new enseignant_cont();
-                     $ens = $classC->recup_heure();
-                      foreach ($ens as $en): 
-                    ?>
-                    <tr><td><?php echo $en['heuretravail'] ?></td><td><?php echo $en['heurerecep'] ?></td><td><?php echo $en['jour']?></td><td>
-                    <form action='./controller/enseignant.php' method='post' >
-                        <input type='hidden' name='id' value='<?php echo $en['id'] ?>'> 
-                                                        
-                        <input type='submit'  name='supprimer' value='Supprimer'>
-                        </form>    
-                    </td>
+                     $enss = $classC->recup_heure();
+                   
+          
+                    
                   
-                        </tr>
+                      foreach ($enss as $e): 
+                    
+                         
+                         $ens = $classC->recup_ens__id($e['id_ens']);
+                         $name = $ens[0]['nom'];
+                    ?>
+                    <tr>
+                       <td><?php echo $name ?></td>
+                      <td><?php echo $e['heuretravail'] ?></td>
+                    
+                      <td><?php echo $e['heurerecep'] ?></td>
+                      <td><?php echo $e['jour']?></td>
+                      <td>
+                        <form action='./controller/enseignant.php' method='post' >
+                        <input type='hidden' name='id' value='<?php echo $e['id'] ?>'> 
+                                                        
+                        <input type='submit'  name='supprimerheure' value='Supprimer'>
+                        </form>    
+                     </td>
+                  
+                      </tr>
               
-                     <?php endforeach; ?>
+                     
+                     <?php  endforeach; echo "</pre>";?>
                 </tbody>
             </table>
-            <?php endforeach; ?>
-     
+           
+           <br><br><br><br><pre>
+           </pre>
+       <table id="customers" class="customers" style="position:center;">
+                <thead style="color:black;">
+                    <tr>
+                    <th scope="col" rowspan="3"> enseignant </th>
+                    <th scope="col" rowspan="3"> classe </th>
+                    <th scope="col">supprimer </th>
+                    </tr>               
+                </thead>
+                <tbody >
+                  <?php
+
+             $data =  $classC->select_ens();
+             foreach ($data as $dt) {
+                
+                 $ens = $classC->ens_name($dt['id_ens']);
+                 
+           ?>
+                      <tr>
+                      <td><?php echo $ens['nom'];?></td>
+                      <td><?php echo $dt['id_classe']?> </td>
+                      <td>
+                        <form action='./controller/enseignant.php' method='post' >
+                        <input type='hidden' name='ids' value='<?php echo $dt['id'] ?>'> 
+                                                        
+                        <input type='submit'  name='supp' value='Supprimer'>
+                        </form> </td>
+                      </tr>
+                      <?php }?>
+                </tbody>
+            </table>
+          
 </body>
 
 

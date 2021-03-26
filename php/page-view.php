@@ -52,34 +52,9 @@
     <img src="../images/logo.png" alt="Girl in a jacket" width="500" height="600">
 </div></a>
 
-
+<a  href="acceuil-view.php" style="color:black;" >Aller à la page d'acceuil</a>
        
-    <!-- <div class=" container-fluid row-d">
-    <div class="row sous-row-d">
-      <article class="col-lg-6 a1">
-       <div class=" articles-site ">
-        <h2> Articles!</h2>
-       <div class="article-site">
-        <p class="texte-article">titre article ok fhzvf</p> 
-        <p class="collapse texte-article1">contenu</p>  
-        <button class="btn btn-link " data-toggle ="collapse" data-target=".texte-article1">lire la suite</button>      
-        </div>
-       </div> 
-     </article>
-
-     <div class=" container-fluid row-d">
-    <div class="row sous-row-d">
-      <article class="col-lg-6 a1">
-       <div class=" articles-site ">
-        <h2> Articles!</h2>
-       <div class="article-site">
-        <p class="texte-article">titre article ok fhzvf</p> 
-        <p class="collapse texte-article1">contenu</p>  
-        <button class="btn btn-link " data-toggle ="collapse" data-target=".texte-article1">lire la suite</button>      
-        </div>
-       </div> 
-     </article>
- -->
+   
 
       
      

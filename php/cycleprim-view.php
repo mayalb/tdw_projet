@@ -2,92 +2,67 @@
 <html >
     <head>
         <meta charset="UTF-8">
-        <link href="../css/sheet.css" rel="stylesheet" />
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        
 
-        <title>Ecole de formation TDW</title> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/sheet.css">
+
+<link rel="stylesheet" type="text/css" href="../css/article_style.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+      
+       
+
+        <title>Cycle Primaire</title> 
         
     </head>
     <body >
+    <?php include("./header.php"); ?>
+       <!-- Emploi du temps -->
+       <br ><br >
+          <div class="cadre-article"  >
+          <center> <h3>Emplois du temps</H3> </center>
+          Consulter les emplois du temps du cycle primaire<br>
+          <img src="../images/edt.jpg" alt="Girl in a jacket" width="500" height="600">
+          <center>   <a style="color: #00121b;font-weight: lighter;text-decoration: underline;" href='./edt-primaire-view.php'>Consulter ...</a></center>
+           </div>
+           <div class="cadre-article"  >
+          <center> <h3>Enseignants</H3> </center>
+          toutes informations des enseignants du cycle. <br>
+          <img src="../images/menu4.png" alt="Girl in a jacket" width="500" height="600">
+          <center>   <a style="color: #00121b;font-weight: lighter;text-decoration: underline;" href='./enseignant-primaire-view.php'>Consulter ...</a></center>
+           </div>
+           <div class="cadre-article"  >
+          <center> <h3>Informations Pratiques</H3> </center>
+          Consulter les informations pratiques du cycle.<br>
+          <img src="../images/conf.jpg" alt="Girl in a jacket" width="500" height="600">
+          <center>   <a style="color: #00121b;font-weight: lighter;text-decoration: underline;" href='./info-pratique-prim-view.php'>Consulter ...</a></center>
+           </div>
+           <div class="cadre-article"  >
+          <center> <h3>Restauration</H3> </center>
+          Consulter les repas que notre école offre.<br>
+          <img src="../images/feed.jpg" alt="Girl in a jacket" width="500" height="600">
+          <center>   <a style="color: #00121b;font-weight: lighter;text-decoration: underline;" href='./restau-primaire-view.php'>Consulter ...</a></center>
+           </div>
+       
     
        
-      <div class="container-fluid top-container">
-      <div class="row-a">
-         <img src="../images/logo.png" class="logo" style="height: 50px;width: 120px;">
-         
-           <a class="res-soc-link"  href="https://www.youtube.com" style="padding-left:900px;" ><img src="../images/q5.png" ></a>  
-           <a class="res-soc-link1"  href="https://www.facebook.com"><img src="../images/q7.png"></a>
-           <a class="res-soc-link1"  href="https://www.instagram.com"><img src="../images/q4.png"></a>
-           <a class="res-soc-link1"  href="https://www.google.com"><img src="../images/q6.png"></a>
-           <a class="res-soc-link1"  href="https://www.LinkedIn.com"><img src="../images/q1.png"></a>
-           <a class="res-soc-link"  href="connexion-view.php"> Connexion</a>  
-      </div>
-      <nav>
-      
-          <ul class="menu" id="menu">
-            <li ><a href="#">Acceuil</a> </li>
-          <li ><a href="#"></a>Présentation </a></li>
-              
-          <li ><a href="cycleprim-view.php"></a>Cycle primaire</a></li>
-          <li ><a href="#"></a>Cycle moyen</a></li>
-          <li ><a href="#"></a>Cycle secondaire</a></li>
-          <li ><a href="#">Espace élève</a></li> 
-          <li ><a href="#">Espace Parent</a></li> 
-          <li ><a href="#">Contact</a></li> 
-         </ul>
      
-        </nav>
-     
-     
-        <form action="./controller/inscription.php" method="POST"> 
-              <div class="form-group  ">
-                <label for="name">Nom </label>
-                <input type="text"   id="name" class="form-control" name="nom">
-              </div> 
-              <div class="form-group">
-                <label for="name">Prénom </label>
-                <input type="text"   id="name" class="form-control" name="prenom">
-              </div> 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email"   id="email" class="form-control" name="email">
-              </div>   
-              <div class="form-group">
-                <label for="password">Mot de passe </label>
-                <input type="password"   id="password" class="form-control" name="mdp1">
-              </div>
-              <div class="form-group">
-                <label for="password">confirmation du mot de passe </label>
-                <input type="password"   id="password2" class="form-control" name="mdp2">
-              </div> 
-              <div class="form-group">
-                <label for="address">Adresse </label>
-                <input type="address"   id="address" class="form-control" name="adresse">
-              </div>  
-              <div class="form-group">
-                <label for="address">Commune </label>
-                <input type="address"   id="commune" class="form-control" name="commune">
-              </div>  
-              <div class="form-group">
-                <label for="address">Wilaya </label>
-                <input type="address"   id="wilaya" class="form-control" name="wilaya" >
-              </div>  
-              <div class="form-group">
-                <label for="address">numéro de télephone </label>
-                <input type="address"   id="address" class="form-control" name="num">
-              </div>   
-              <div class="form-group">
-                <label for="address">Faxe</label>
-                <input type="address"   id="faxe" class="form-control" name="faxe">
-              </div>   
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
-               <input type="submit" name="submit" value="S'inscrire" class="btn btn-primary">
-            </form>
+   
+
+    <?php
+            include("./controller/cycle-primaire.php");
+            $check= new classcycleprimaire();
+            $article = $check->recup_article(3);
+            foreach ($article as  $value) {?>
+          <div class="cadre-article"  >
+          <center> <h3><?php echo $value['titre']?></H3> </center>
+          <?php echo $value['description']?><br>
+          <img src="<?php echo $value['lien_image']?>" alt="Girl in a jacket" width="500" height="600">
+          <center>   <a style="color: #00121b;font-weight: lighter;text-decoration: underline;" href='./article-info-view.php?id=<?php echo $value['id'];?>'>Afficher la suite ...</a></center>
+           </div>
+        
+         <?php }  ?>
+         <?php include("./footer.php"); ?>
     </body>
     
  

@@ -29,13 +29,17 @@ if (isset($_SESSION['mail'])){
 <body style="background-image: url('../images/blue.jpg');">
         <center><h1>Gestion des articles </h1></center>
         <form class="inline" action="./controller/deconnect.php"  method="post"  >
-        <input class=" button2"  type="submit" name="dcnt" id="dcnt" value="Déconnexion" >
+        <input style="width:250px;"  type="submit" name="dcnt" id="dcnt" value="Déconnexion" >
         </form>
+        <a  href="page-view.php" style="color:black;" >Retour à la page d'administration</a>
+      
       
 
         <br><br><br><br><br>
-
- <form class="center" action="./controller/article.php" method="POST"  enctype="multipart/form-data" >
+        <center><h3>Ajout/Modification des articles </h3>
+        <div class="from-st">
+       
+         <form  action="./controller/article.php" method="POST"  enctype="multipart/form-data" >
              <select id="getarticle" name="getarticle">
                    <option selected>Sélectionner l'article à modifier...</option>
                    <?php 
@@ -69,7 +73,7 @@ if (isset($_SESSION['mail'])){
                    <br><br><br>
                <input class="button2" type="submit" name="submit" value="Ajouter Article" >
                <input  class=" button2"  type="submit" name="modifier" id="modifier" value="Modifier article" >
-            </form>
+            </form></center></div>
          
             <br><br><br> 
             <?php 
@@ -85,13 +89,13 @@ if (isset($_SESSION['mail'])){
             <p>ceux qui sont interessés par l'article : <?= $article['aud'] ?></p> 
 
             <?php
-            echo "<img src='{$img}' alt='photo article' style='height: 150px;' class='avatar'>";
+            echo "<img src='{$img}' alt='photo article' style='height: 120px; ' class='avatar'>";
             ?>
-            <br> 
+           
              
         <form  class="inline" action="./controller/article.php"  method="post"  >
         <input  class=" button2"  type="hidden" name="id" value="<?= $article['id'] ?>" >
-        <input  class=" button2"  type="submit" name="supprimer" id="supprimer" value="Supprimer article" >
+        <center>  <input  class=" button2" style=" width:230px;" type="submit" name="supprimer" id="supprimer" value="Supprimer article" ></center>
         </form>
            </div>
            <?php endforeach; ?>

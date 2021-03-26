@@ -1,0 +1,88 @@
+    .card3 {
+  width: 320px; /*1
+  background-color: white; /*3*/
+  box-shadow: 0px 5px 20px #999; /*4*/
+  margin-left: 10px;
+  margin-top: 30px;
+  font-family: Arial !important;
+}
+.card3 a { /*5*/
+  color: #333; 
+  text-decoration: none;
+}
+.card3:hover .card-image3 img { /*6*/
+  width: 120%;
+  filter: grayscale(0);
+}
+/*******************************************/
+.card-image3 {
+  height: 400px;/*1*/
+  position: relative;/*2*/
+  overflow: hidden;/*3*/
+}
+.card-image3 img {
+  width: 130%;/*4*/
+    /*5 - Méthode de centrage en fonction de la taille de l'image */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: grayscale(0.5);/*6*/
+    /*7 - Transition */
+  transition-property: filter width; 
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+/*******************************************/
+.card-body3 {
+    text-align:center;  /*1*/
+  padding: 15px 20px; /*2*/
+  box-sizing: border-box; /*3*/
+}
+/*******************************************/
+
+
+.card-title3, .card-excerpt3 {
+     font-family: Arial , Helvetica, sans-serif;
+
+}
+
+.card-title3 {
+  text-align:center;
+  text-transform:uppercase;
+  font-weight: bold;
+}
+
+.card-excerpt3 {
+  color: #777;
+}
+
+.articles3{
+  display: inline-flex;
+  
+}
+div .card3 { float:left; width: 350px;margin-top:30px; margin-left:20px;}
+/***************************************/
+.lien_connexion{
+ 
+  color: #ff9800;
+  padding: 20px;
+  font-size: 25px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 35px;margin-bottom: 15px;
+}
+
+.lien_connexion a{
+  
+  color: #ff9800;
+  text-align: center;
+  text-decoration: none;
+
+} 
+
+.lien_connexion:hover, .link_conn:hover{
+  background: white;
+  color: #ff9800;
+}

@@ -33,8 +33,8 @@ if (isset($_SESSION['mail'])){
         <form class="inline" action="./controller/deconnect.php"  method="post"  >
         <input style="width:250px;"  type="submit" name="dcnt" id="dcnt" value="Déconnexion" >
         </form>
-        <a  href="page-view.php" style="color:black;" >Retour à la page d'administration</a>
-        <a  href="classe-edt-view.php" style="color:black;" >Visualiser les emplois du temps</a>
+        <a  href="page-view.php" class="buy">Retour à la page d'administration</a>
+        <a  href="classe-edt-view.php" class="buy" >Visualiser les emplois du temps</a>
       
   <br><br><br><br><br>
       

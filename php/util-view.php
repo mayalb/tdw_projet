@@ -34,11 +34,11 @@ if (isset($_SESSION['mail'])){
         <form class="inline" action="./controller/deconnect.php"  method="post"  >
         <input style="width:250px;"  type="submit" name="dcnt" id="dcnt" value="Déconnexion" >
         </form>
-        <a  href="page-view.php" style="color:black;" >Retour à la page d'administration</a>
-        <a  href="register-eleve-view.php" style="color:black;" >Gestion compte eleve</a>
-        <a  href="register-ens-view.php" style="color:black;" >Gestion compte Enseignant</a>
-        <a  href="register-parent-view.php" style="color:black;" >Gestion compte Parent</a>
-        <a  href="register-admin-view.php" style="color:black;" >Gestion compte Admin</a>
+        <a  href="page-view.php" class="buy" >Retour à la page d'administration</a>
+        <a  href="register-eleve-view.php" class="buy">Gestion compte eleve</a>
+        <a  href="register-ens-view.php" class="buy" >Gestion compte Enseignant</a>
+        <a  href="register-parent-view.php" class="buy">Gestion compte Parent</a>
+        <a  href="register-admin-view.php" class="buy">Gestion compte Admin</a>
       
 
         <br><br><br><br><br>

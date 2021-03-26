@@ -58,6 +58,27 @@
     $resultat = $req->getparagraphe();
     return $resultat;
    }
+  
+
+    public function afficherparagraphe_and_image(){
+      $data = $this->afficherparagraphe();
+      foreach ($data as  $key=>$value) {
+        if(strlen($value['lien_img'])>0):
+            if(is_file(substr($value['lien_img'],3)) && file_exists(substr($value['lien_img'],3))):
+              $data[$key]['lien_img']=substr($value['lien_img'],3);
+            else:
+              unset($data[$key]);
+            endif;
+        else:
+            unset($data[$key]);
+        endif;
+
+      }
+      
+
+      return $data;
+   }
+
 
    public function supprimerparagraphe()
    {

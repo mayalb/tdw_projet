@@ -3,6 +3,8 @@
  include(('C:\xampp\htdocs\ecole_2\php\model\article-model.php'));
   @session_start();
 
+  @setcookie("type",'admin',time()+3600*5,'/');
+
  class art{
 
   public function postarticle(){
@@ -100,13 +102,53 @@ else
     // echo $resultat['lien_image']; 
     return $resultat;
    }
+
+   public function recuparticle_now_acceuil(){
+    $req = new article();
+    $resultat = array_reverse($req->getarticle()); 
+    $datas=array();
+    $i=0;
+    foreach ($resultat as $key => $value) {
+      if($i<8):
+        $resultat[$key]['description']=substr($value['description'], 0,50);
+        $resultat[$key]['lien_image']=substr($value['lien_image'],3);
+        $datas[]=$resultat[$key];
+      else:
+        break;
+      endif;
+      $i++;
+    }
+    return $datas;
+   } 
+   public function recuparticle_now_acceuil_all($ids){
+    $req = new article();
+    $resultat = $req->getarticle(); 
+    $needs = array();
+    foreach ($resultat as $key => $value) {
+      
+      foreach ($ids as $value2) {
+        if($value['id'] == $value2):
+          unset($resultat[$key]);
+         endif;
+      }
+      
+      
+    }
+    return $resultat;
+   }
+
     public function supprimerarticle()
    {
         $req = new article();
         $req->supprimer();   
    
    }
-
+  public function recuparticle_by_id($id){
+    $req = new article();
+    $data = $req->getarticle_byid($id)[0];
+    $resultat = str_replace("../", '',$data);
+    return $resultat;
+  }
   //  public function modifierarticle()
   //  {
   //       $req = new article();

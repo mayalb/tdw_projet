@@ -7,6 +7,20 @@ class parents
     } 
     public function modifyprofil(){
     }  
+    public function get_classe($id_child){
+    
+      $co=new database();
+      $conn=$co->connecttodb();
+      $select1="SELECT * FROM eleve WHERE id='$id_child'";
+      $res=$co->selecttable($select1);
+      $id_classe=$res[0]['classe'];
+      $activite=$res[0]['activite_extrascol'];
+      $select1="SELECT * FROM classe WHERE id='$id_classe'";
+      $res=$co->selecttable($select1);
+      $res[0]['activite']=$activite;
+      $res[0]['id_classe']= $id_classe;
+      return $res;
+    }
     public function get_parent(){
         $co=new database();
         $conn=$co->connecttodb();
@@ -56,6 +70,59 @@ class parents
          
          header ('location:..\util-view.php');
     }
+     public function get_parents_by_credentials($email,$mdp){
+        $co  =new database();
+        $conn=$co->connecttodb(); 
+        $sql = "SELECT * FROM utilisateur WHERE email='$email' and mdp='$mdp' ";     
+        $res =$co->selecttable($sql);
+        return $res;
+    }
+    
+
+      public function get_credentials_parent_table($email,$mdp){
+        $co=new database();
+        $conn=$co->connecttodb();
+        $returned_data = array("parent_data"=>array(),"child_data"=>array());
+        $select1="SELECT * FROM utilisateur WHERE email='$email' and mdp='$mdp'";
+        $res=$co->selecttable($select1);
+        $returned_data['parent_data']=$res[0];
+        $id_parent = $res[0]['id'];
+        $select1="SELECT id FROM eleve WHERE id_parent='$id_parent'";
+        $res=$co->selecttable($select1);
+        $ids=array();
+        foreach ($res as $key => $value) {
+          $ids[]=$value['id'];
+        }
+        foreach ($ids as $value) {
+          $select1="SELECT * FROM utilisateur WHERE id='$value'";
+          $res=$co->selecttable($select1);
+          $returned_data['child_data'][]=$res;
+        }
+        return $returned_data;
+      }
+     public function getarticle($type){
+       $six=6;
+        $co=new database();
+        $conn=$co->connecttodb();
+        $query="SELECT * FROM article where aud='$type' or aud='6' ";
+       $resultat= $co->selecttable($query);
+      
+        return $resultat;
+    }
+  public function  get_notes_child($id_child){
+        $co=new database();
+        $conn=$co->connecttodb();
+      
+
+          $query="SELECT * FROM note where id_eleve='$id_child' ";
+          $resultat1= $co->selecttable($query);
+
+          return $resultat1;
+  
+       }
+  
+
+  
 }
     
 
